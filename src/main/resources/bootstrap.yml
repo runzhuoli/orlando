@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: orlando
+  cloud:
+    config:
+        uri: ${EGLINTON_URL:https://apointerUser:apointeruser+1s@eglinton-apointer.herokuapp.com/}
+        enabled: false
+spring:
+  jpa:
+    open-in-view: false
+
+hibernate:
+  connection:
+    autocommit: false
+  format_sql: false
+  hbm2ddl:
+    auto: validate
+  show_sql: false
+  current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+  dialect: org.hibernate.dialect.PostgreSQLDialect
+
+jdbc:
+  driverClassName: org.postgresql.Driver
+  url: jdbc:postgresql://apointer-staging.c4awqjkjampg.us-east-2.rds.amazonaws.com:5432/postgres
+  username: apointer
+  password: apointer+1s
+
+#Eureka
+eureka:
+  client:
+    enabled: false
+
+server:
+  port: 8099
